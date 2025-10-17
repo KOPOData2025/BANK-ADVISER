@@ -67,7 +67,8 @@ AI 기반 스마트 금융 상담 시스템 'Bank Advisor'는 행원의 업무 �
 ---
 
 ## 6. 시스템 아키텍처
-<img width="1440" height="900" alt="시스템 아키텍처" src="https://github.com/user-attachments/assets/886e6817-d04b-453a-9a4e-4eac645270b5" />
+<img width="1440" height="900" alt="스크린샷 2025-10-17 오후 5 25 00" src="https://github.com/user-attachments/assets/7960cc36-d344-48ab-86a1-1c144434d554" />
+
 
 ---
 <div align="right">
