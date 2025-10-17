@@ -1961,7 +1961,7 @@ const ProductExplorer = ({
               };
 
               stompClient.publish({
-                destination: `/topic/session/tablet_main`,
+                destination: `/topic/session/${sessionId}`,
                 body: JSON.stringify(closeMessage),
               });
 

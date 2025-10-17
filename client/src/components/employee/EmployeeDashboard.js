@@ -921,7 +921,7 @@ const EmployeeDashboard = () => {
                   };
 
                   stompClient.publish({
-                    destination: `/topic/session/tablet_main`,
+                    destination: `/topic/session/${sessionId}`,
                     body: JSON.stringify(tabletMessage),
                   });
 
@@ -1295,7 +1295,7 @@ const EmployeeDashboard = () => {
                 // 태블릿에 업데이트된 필드 값 동기화 메시지 전송
                 if (stompClient && stompClient.connected) {
                   stompClient.publish({
-                    destination: "/topic/session/tablet_main",
+                    destination: `/topic/session/${sessionId}`,
                     body: JSON.stringify({
                       type: "field-values-sync",
                       data: {
@@ -3900,7 +3900,7 @@ const EmployeeDashboard = () => {
                       };
 
                       stompClient.publish({
-                        destination: "/topic/session/tablet_main",
+                        destination: `/topic/session/${sessionId}`,
                         body: JSON.stringify(completionMessage),
                       });
 

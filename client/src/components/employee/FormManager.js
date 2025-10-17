@@ -21,7 +21,7 @@ const FormManager = ({
   onFormComplete,
   onScreenSync,
   onFormDataUpdate,
-  sessionId = "tablet_main", // WebSocket 세션 ID 추가 (기본값)
+  sessionId = null, // WebSocket 세션 ID (외부에서 전달)
   stompClient: externalStompClient, // 외부에서 전달받은 WebSocket 클라이언트
   apiForms = null, // API에서 받은 폼 데이터
 }) => {
@@ -1151,11 +1151,11 @@ const FormManager = ({
         stompClient: !!stompClient,
         connected: stompClient?.connected,
         sessionId: sessionId,
-        topic: `/topic/session/tablet_main`,
+        topic: `/topic/session/${sessionId}`,
       });
 
       const subscription = stompClient.subscribe(
-        `/topic/session/tablet_main`,
+        `/topic/session/${sessionId}`,
         (message) => {
           try {
             const data = JSON.parse(message.body);

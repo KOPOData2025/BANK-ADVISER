@@ -55,7 +55,11 @@ const CustomerTablet = () => {
 
   const [stompClient, setStompClient] = useState(null);
   const [connected, setConnected] = useState(false);
-  const [sessionId, setSessionId] = useState("tablet_main");
+  const [sessionId, setSessionId] = useState(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("sessionId");
+    const fromStorage = localStorage.getItem("sessionId");
+    return fromUrl || fromStorage || null;
+  });
 
   const [employeeId, setEmployeeId] = useState(null); // 직원 ID 추가
   const [isEmployeeLoggedIn, setIsEmployeeLoggedIn] = useState(false); // 직원 로그인 상태
@@ -171,7 +175,10 @@ const CustomerTablet = () => {
     console.log("👤 [태블릿] 직원 로그아웃");
     setEmployeeId(null);
     setIsEmployeeLoggedIn(false);
-    setSessionId("tablet_main");
+    if (!sessionId) {
+      const defaultId = localStorage.getItem("sessionId");
+      if (defaultId) setSessionId(defaultId);
+    }
 
     // WebSocket 재연결
     if (stompClient) {
@@ -876,7 +883,7 @@ const CustomerTablet = () => {
               body: JSON.stringify(joinMessage),
             });
 
-            client.subscribe(`/topic/session/tablet_main`, (message) => {
+            client.subscribe(`/topic/session/${sessionId}`, (message) => {
               try {
                 const data = JSON.parse(message.body);
                 if (process.env.NODE_ENV === "development") {
@@ -5840,7 +5847,7 @@ const CustomerTablet = () => {
             // PC에 필드 입력 완료 메시지 전송
             if (stompClient && stompClient.active) {
               stompClient.publish({
-                destination: "/topic/session/tablet_main",
+                destination: `/topic/session/${sessionId}`,
                 body: JSON.stringify({
                   type: "field-input-complete",
                   data: {
@@ -6037,12 +6044,12 @@ const CustomerTablet = () => {
                     };
 
                     stompClient.publish({
-                      destination: "/topic/session/tablet_main",
+                      destination: `/topic/session/${sessionId}`,
                       body: JSON.stringify(message),
                     });
 
                     console.log("📤 [태블릿] 필드 입력 완료 메시지 전송:", {
-                      destination: "/topic/session/tablet_main",
+                      destination: `/topic/session/${sessionId}`,
                       message: message,
                       stompClientConnected: stompClient.connected,
                       sessionId: "tablet_main",
