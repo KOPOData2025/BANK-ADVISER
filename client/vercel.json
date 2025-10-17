@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/api/ocr/(.*)",
+      "destination": "http://15.164.230.192:8081/api/ocr/$1"
+    },
+    {
+      "source": "/forms/(.*)",
+      "destination": "http://13.209.3.0:8080/forms/$1"
+    },
+    {
+      "source": "/api/ws",
+      "destination": "http://13.209.3.0:8080/api/ws"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "http://13.209.3.0:8080/api/$1"
+    },
+    {
+      "source": "/pyannote/(.*)",
+      "destination": "http://15.164.225.160:5005/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "no-store, no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "cache-control",
+          "value": "s-maxage=31536000,immutable"
+        }
+      ]
+    }
+  ]
+}

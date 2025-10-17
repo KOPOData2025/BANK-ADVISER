@@ -1,0 +1,181 @@
+/* 하나금융그룹 공식 색상 팔레트 및 기본 스타일 */
+:root {
+  /* 하나금융그룹 메인 컬러 */
+  --hana-primary: #00857a;
+  --hana-primary-dark: #006b63;
+  --hana-primary-light: #e8f5f4;
+
+  /* 하나금융그룹 보조 컬러 */
+  --hana-mint: #00857a;
+  --hana-mint-light: #e8f5f4;
+  --hana-mint-dark: #006b63;
+
+  /* 하나금융그룹 포인트 컬러 */
+  --hana-orange: #ff6b35;
+  --hana-orange-light: #ffe4dc;
+
+  /* 하나금융그룹 그레이스케일 */
+  --hana-black: #1a1a1a;
+  --hana-dark-gray: #4a4a4a;
+  --hana-gray: #8c8c8c;
+  --hana-light-gray: #e5e5e5;
+  --hana-bg-gray: #f8f9fa;
+  --hana-white: #ffffff;
+
+  /* 기능별 컬러 */
+  --hana-success: #28a745;
+  --hana-success-light: #d4f4dd;
+  --hana-warning: #ffc107;
+  --hana-warning-light: #fff3cd;
+  --hana-error: #dc3545;
+  --hana-error-light: #f8d7da;
+  --hana-info: #17a2b8;
+  --hana-info-light: #d1ecf1;
+
+  /* 그림자 */
+  --hana-shadow-light: 0 2px 8px rgba(0, 133, 122, 0.1);
+  --hana-shadow-medium: 0 4px 16px rgba(0, 133, 122, 0.15);
+  --hana-shadow-heavy: 0 8px 32px rgba(0, 133, 122, 0.2);
+
+  /* 보더 */
+  --hana-border-light: 1px solid var(--hana-light-gray);
+  --hana-border-medium: 1px solid var(--hana-gray);
+  --hana-border-primary: 2px solid var(--hana-primary);
+
+  /* 타이포그래피 */
+  --hana-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  --hana-font-size-xs: 0.75rem;
+  --hana-font-size-sm: 0.875rem;
+  --hana-font-size-base: 1rem;
+  --hana-font-size-lg: 1.125rem;
+  --hana-font-size-xl: 1.25rem;
+  --hana-font-size-2xl: 1.5rem;
+  --hana-font-size-3xl: 1.875rem;
+  --hana-font-size-4xl: 2.25rem;
+
+  /* 스페이싱 */
+  --hana-space-1: 0.25rem;
+  --hana-space-2: 0.5rem;
+  --hana-space-3: 0.75rem;
+  --hana-space-4: 1rem;
+  --hana-space-5: 1.25rem;
+  --hana-space-6: 1.5rem;
+  --hana-space-8: 2rem;
+  --hana-space-10: 2.5rem;
+  --hana-space-12: 3rem;
+  --hana-space-16: 4rem;
+
+  /* 보더 반경 */
+  --hana-radius-sm: 4px;
+  --hana-radius-md: 8px;
+  --hana-radius-lg: 12px;
+  --hana-radius-xl: 16px;
+  --hana-radius-full: 9999px;
+
+  /* 트랜지션 */
+  --hana-transition-fast: 0.15s ease-out;
+  --hana-transition-base: 0.2s ease-out;
+  --hana-transition-slow: 0.3s ease-out;
+
+  /* 기존 변수 호환성 유지 */
+  --primary-color: var(--hana-primary);
+  --secondary-color: var(--hana-mint);
+  --accent-color: var(--hana-orange);
+  --background-color: var(--hana-bg-gray);
+  --surface-color: var(--hana-white);
+  --text-primary: var(--hana-black);
+  --text-secondary: var(--hana-gray);
+  --border-color: var(--hana-light-gray);
+  --shadow-light: var(--hana-shadow-light);
+  --shadow-medium: var(--hana-shadow-medium);
+
+  /* 호환성을 위한 추가 매핑 */
+  --hana-red: var(--hana-error);
+  --hana-blue: var(--hana-info);
+}
+
+/* 글로벌 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--hana-font-family);
+  font-size: var(--hana-font-size-base);
+  line-height: 1.6;
+  color: var(--hana-black);
+  background-color: var(--hana-bg-gray);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100vh;
+  background: var(--hana-bg-gray);
+  overflow: hidden;
+}
+
+/* 코드 폰트는 기본 모노스페이스 유지 */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* A4 paper effect */
+.page-container {
+  background: white;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  padding: 15mm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Form input styles */
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 2px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.9rem;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid #087561;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* General utility classes */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-bold {
+  font-weight: 700;
+}
+.d-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-between {
+  justify-content: space-between;
+}

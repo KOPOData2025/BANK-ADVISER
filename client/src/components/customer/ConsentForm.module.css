@@ -1,0 +1,161 @@
+.formContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.approvalBox table {
+  border-collapse: collapse;
+  width: 210px;
+}
+
+.approvalBox td {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.recipient {
+  text-align: right;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.infoText {
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.mainTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.mainTable th,
+.mainTable td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.thFirst {
+  background-color: #f7f7f7;
+  width: 130px;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tdContent {
+  line-height: 1.7;
+}
+
+.subText {
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.itemSection {
+  margin-bottom: 15px;
+}
+.itemSection:last-child {
+  margin-bottom: 0;
+}
+
+.itemTitle {
+  font-weight: 500;
+  margin: 0 0 5px 0;
+}
+
+.subItem {
+  margin-left: 10px;
+  font-size: 0.85rem;
+}
+.subItem p {
+  margin: 3px 0;
+}
+
+.consentCheck {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.checkboxLabel {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.notice {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  padding-left: 5px;
+  color: #444;
+}
+
+.signatureSection {
+  margin-top: 30px;
+}
+
+.date {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.signer {
+  text-align: right;
+  margin-bottom: 10px;
+}
+.signer span {
+  margin-left: 20px;
+}
+
+.legalRep {
+  margin-top: 20px;
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
+}
+.legalRep p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.bankLogo img {
+  height: 25px;
+}

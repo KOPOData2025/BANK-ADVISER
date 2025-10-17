@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="theme-color" content="#008485" />
+    <meta name="description" content="하나은행 스마트 금융 상담 시스템" />
+
+    <!-- PWA 설정 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="하나은행 스마트 상담" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- 태블릿 전용 PWA 설정 -->
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- 아이콘 -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="%PUBLIC_URL%/logo192.png"
+    />
+
+    <!-- 매니페스트 -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- 태블릿용 매니페스트 (태블릿 접속 시 자동 전환) -->
+    <script>
+      // 태블릿 접속 시 태블릿용 매니페스트로 전환
+      if (
+        window.location.pathname.includes("/tablet") ||
+        window.location.pathname.includes("/customer")
+      ) {
+        const manifestLink = document.querySelector('link[rel="manifest"]');
+        if (manifestLink) {
+          manifestLink.href = "%PUBLIC_URL%/manifest-tablet.json";
+        }
+
+        // PWA 설치 프롬프트 강제 표시
+        let deferredPrompt;
+        window.addEventListener("beforeinstallprompt", (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          console.log("PWA 설치 프롬프트 준비됨");
+
+          // 설치 버튼 표시 (선택사항)
+          const installButton = document.createElement("button");
+          installButton.textContent = "PWA 설치";
+          installButton.style.cssText =
+            "position:fixed;top:10px;right:10px;z-index:9999;background:#008485;color:white;border:none;padding:10px;border-radius:5px;";
+          installButton.onclick = () => {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+              if (choiceResult.outcome === "accepted") {
+                console.log("PWA 설치 승인됨");
+              }
+              deferredPrompt = null;
+            });
+          };
+          document.body.appendChild(installButton);
+        });
+
+        // PWA 설치 완료 확인
+        window.addEventListener("appinstalled", (e) => {
+          console.log("PWA 설치 완료:", e);
+          alert("PWA 설치가 완료되었습니다! 홈 화면에서 앱을 실행해보세요.");
+        });
+
+        // 태블릿에서 PWA 실행 시 주소창 숨기기
+        if (window.matchMedia("(min-width: 768px)").matches) {
+          // 태블릿 크기 감지
+          console.log("태블릿 모드 감지됨");
+
+          // PWA 모드에서 실행 중인지 확인
+          if (
+            window.navigator.standalone === true ||
+            window.matchMedia("(display-mode: standalone)").matches
+          ) {
+            console.log("PWA 모드로 실행 중");
+            // 주소창 숨기기 시도
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
+          }
+        }
+      }
+    </script>
+    <title>하나은행 스마트 상담</title>
+
+    <!-- STOMP 클라이언트 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+
+    <!-- PDF.js 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      window["pdfjs-dist/build/pdf"] = window.pdfjsLib;
+      // PDF.js 설정
+      if (window.pdfjsLib) {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+          "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!-- Service Worker 등록 -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => {
+              console.log("SW registered: ", registration);
+            })
+            .catch((registrationError) => {
+              console.log("SW registration failed: ", registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

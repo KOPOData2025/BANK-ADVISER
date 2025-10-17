@@ -1,0 +1,172 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* 태블릿에서 모달 크기 최대화 */
+@media (min-width: 768px) {
+  .modal {
+    max-width: 600px;
+    padding: 30px;
+  }
+}
+
+/* PWA 모드에서 추가 최적화 */
+@media (display-mode: standalone) {
+  .modal {
+    max-width: 700px;
+    padding: 40px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background-color: #f8f9fa;
+}
+
+.canvasContainer {
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #fafafa;
+}
+
+.canvas {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+  cursor: crosshair;
+}
+
+.instructions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.instructions p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.clearButton,
+.cancelButton,
+.saveButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.clearButton {
+  background: #6c757d;
+  color: white;
+}
+
+.clearButton:hover {
+  background: #5a6268;
+}
+
+.cancelButton {
+  background: #dc3545;
+  color: white;
+}
+
+.cancelButton:hover {
+  background: #c82333;
+}
+
+.saveButton {
+  background: #28a745;
+  color: white;
+}
+
+.saveButton:hover:not(:disabled) {
+  background: #218838;
+}
+
+.saveButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 태블릿 터치 최적화 */
+@media (max-width: 768px) {
+  .modal {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .clearButton,
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+    padding: 12px;
+  }
+}

@@ -1,0 +1,21 @@
+# Build outputs
+target/
+*.jar
+*.war
+
+# IDE
+.vscode
+.idea
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/

@@ -1,0 +1,403 @@
+/* 하나금융그룹 공식 폰트 임포트 */
+@font-face {
+  font-family: 'Hana2';
+  src: url('../assets/fonts/Hana2-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hana2';
+  src: url('../assets/fonts/Hana2-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hana2';
+  src: url('../assets/fonts/Hana2-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hana2';
+  src: url('../assets/fonts/Hana2-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hana2';
+  src: url('../assets/fonts/Hana2-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* 하나금융그룹 공식 색상 팔레트 */
+:root {
+  /* 하나금융그룹 메인 컬러 */
+  --hana-primary: #00857A;      /* 하나 그린 */
+  --hana-primary-dark: #006B63; /* 진한 하나 그린 */
+  --hana-primary-light: #E8F5F4; /* 연한 하나 그린 */
+  
+  /* 하나금융그룹 보조 컬러 */
+  --hana-mint: #00C1B2;         /* 하나 민트 */
+  --hana-mint-light: #B3F0ED;   /* 연한 민트 */
+  
+  /* 하나금융그룹 포인트 컬러 */
+  --hana-orange: #FF6B35;       /* 하나 오렌지 */
+  --hana-orange-light: #FFE4DC; /* 연한 오렌지 */
+  
+  /* 하나금융그룹 그레이스케일 */
+  --hana-black: #1A1A1A;        /* 하나 블랙 */
+  --hana-dark-gray: #4A4A4A;    /* 다크 그레이 */
+  --hana-gray: #8C8C8C;         /* 미디엄 그레이 */
+  --hana-light-gray: #E5E5E5;   /* 라이트 그레이 */
+  --hana-bg-gray: #F8F9FA;      /* 배경 그레이 */
+  --hana-white: #FFFFFF;        /* 화이트 */
+  
+  /* 기능별 컬러 */
+  --hana-success: #28A745;      /* 성공 */
+  --hana-warning: #FFC107;      /* 경고 */
+  --hana-error: #DC3545;        /* 에러 */
+  --hana-info: #17A2B8;         /* 정보 */
+  
+  /* 그림자 및 투명도 */
+  --hana-shadow-light: 0 2px 8px rgba(0, 133, 122, 0.1);
+  --hana-shadow-medium: 0 4px 16px rgba(0, 133, 122, 0.15);
+  --hana-shadow-heavy: 0 8px 32px rgba(0, 133, 122, 0.2);
+  
+  /* 보더 */
+  --hana-border-light: 1px solid var(--hana-light-gray);
+  --hana-border-medium: 1px solid var(--hana-gray);
+  --hana-border-primary: 2px solid var(--hana-primary);
+  
+  /* 타이포그래피 */
+  --hana-font-family: 'Hana2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --hana-font-size-xs: 0.75rem;    /* 12px */
+  --hana-font-size-sm: 0.875rem;   /* 14px */
+  --hana-font-size-base: 1rem;     /* 16px */
+  --hana-font-size-lg: 1.125rem;   /* 18px */
+  --hana-font-size-xl: 1.25rem;    /* 20px */
+  --hana-font-size-2xl: 1.5rem;    /* 24px */
+  --hana-font-size-3xl: 1.875rem;  /* 30px */
+  --hana-font-size-4xl: 2.25rem;   /* 36px */
+  
+  /* 스페이싱 */
+  --hana-space-1: 0.25rem;  /* 4px */
+  --hana-space-2: 0.5rem;   /* 8px */
+  --hana-space-3: 0.75rem;  /* 12px */
+  --hana-space-4: 1rem;     /* 16px */
+  --hana-space-5: 1.25rem;  /* 20px */
+  --hana-space-6: 1.5rem;   /* 24px */
+  --hana-space-8: 2rem;     /* 32px */
+  --hana-space-10: 2.5rem;  /* 40px */
+  --hana-space-12: 3rem;    /* 48px */
+  --hana-space-16: 4rem;    /* 64px */
+  
+  /* 보더 반경 */
+  --hana-radius-sm: 4px;
+  --hana-radius-md: 8px;
+  --hana-radius-lg: 12px;
+  --hana-radius-xl: 16px;
+  --hana-radius-full: 9999px;
+  
+  /* 트랜지션 */
+  --hana-transition-fast: 0.15s ease-out;
+  --hana-transition-base: 0.2s ease-out;
+  --hana-transition-slow: 0.3s ease-out;
+}
+
+/* 글로벌 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--hana-font-family);
+  font-size: var(--hana-font-size-base);
+  line-height: 1.6;
+  color: var(--hana-black);
+  background-color: var(--hana-bg-gray);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 하나금융그룹 로고 및 브랜딩 */
+.hana-logo {
+  display: flex;
+  align-items: center;
+  font-family: var(--hana-font-family);
+  font-weight: 700;
+  color: var(--hana-primary);
+}
+
+.hana-logo-text {
+  font-size: var(--hana-font-size-2xl);
+  margin-left: var(--hana-space-2);
+}
+
+/* 하나금융그룹 버튼 스타일 */
+.hana-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--hana-font-family);
+  font-weight: 500;
+  border: none;
+  border-radius: var(--hana-radius-md);
+  cursor: pointer;
+  transition: all var(--hana-transition-base);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.hana-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--hana-transition-slow);
+}
+
+.hana-btn:hover::before {
+  left: 100%;
+}
+
+.hana-btn-primary {
+  background: linear-gradient(135deg, var(--hana-primary), var(--hana-mint));
+  color: var(--hana-white);
+  box-shadow: var(--hana-shadow-light);
+}
+
+.hana-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hana-shadow-medium);
+}
+
+.hana-btn-secondary {
+  background: var(--hana-white);
+  color: var(--hana-primary);
+  border: var(--hana-border-primary);
+}
+
+.hana-btn-secondary:hover {
+  background: var(--hana-primary-light);
+}
+
+.hana-btn-sm {
+  padding: var(--hana-space-2) var(--hana-space-4);
+  font-size: var(--hana-font-size-sm);
+}
+
+.hana-btn-md {
+  padding: var(--hana-space-3) var(--hana-space-6);
+  font-size: var(--hana-font-size-base);
+}
+
+.hana-btn-lg {
+  padding: var(--hana-space-4) var(--hana-space-8);
+  font-size: var(--hana-font-size-lg);
+}
+
+/* 하나금융그룹 카드 스타일 */
+.hana-card {
+  background: var(--hana-white);
+  border-radius: var(--hana-radius-lg);
+  box-shadow: var(--hana-shadow-light);
+  border: var(--hana-border-light);
+  transition: all var(--hana-transition-base);
+  overflow: hidden;
+}
+
+.hana-card:hover {
+  box-shadow: var(--hana-shadow-medium);
+  transform: translateY(-4px);
+}
+
+.hana-card-header {
+  padding: var(--hana-space-6);
+  background: linear-gradient(135deg, var(--hana-primary-light), var(--hana-mint-light));
+  border-bottom: var(--hana-border-light);
+}
+
+.hana-card-body {
+  padding: var(--hana-space-6);
+}
+
+.hana-card-footer {
+  padding: var(--hana-space-6);
+  background: var(--hana-bg-gray);
+  border-top: var(--hana-border-light);
+}
+
+/* 하나금융그룹 그라데이션 */
+.hana-gradient-primary {
+  background: linear-gradient(135deg, var(--hana-primary), var(--hana-mint));
+}
+
+.hana-gradient-accent {
+  background: linear-gradient(135deg, var(--hana-orange), var(--hana-primary));
+}
+
+/* 하나금융그룹 텍스트 스타일 */
+.hana-text-primary { color: var(--hana-primary); }
+.hana-text-mint { color: var(--hana-mint); }
+.hana-text-orange { color: var(--hana-orange); }
+.hana-text-dark { color: var(--hana-black); }
+.hana-text-gray { color: var(--hana-gray); }
+
+.hana-heading-1 {
+  font-size: var(--hana-font-size-4xl);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: var(--hana-space-6);
+}
+
+.hana-heading-2 {
+  font-size: var(--hana-font-size-3xl);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--hana-space-5);
+}
+
+.hana-heading-3 {
+  font-size: var(--hana-font-size-2xl);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: var(--hana-space-4);
+}
+
+/* 하나금융그룹 입력 필드 */
+.hana-input {
+  font-family: var(--hana-font-family);
+  width: 100%;
+  padding: var(--hana-space-3) var(--hana-space-4);
+  border: var(--hana-border-light);
+  border-radius: var(--hana-radius-md);
+  font-size: var(--hana-font-size-base);
+  transition: all var(--hana-transition-base);
+  background: var(--hana-white);
+}
+
+.hana-input:focus {
+  outline: none;
+  border-color: var(--hana-primary);
+  box-shadow: 0 0 0 3px rgba(0, 133, 122, 0.1);
+}
+
+/* 하나금융그룹 배지 */
+.hana-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--hana-space-1) var(--hana-space-3);
+  font-size: var(--hana-font-size-xs);
+  font-weight: 500;
+  border-radius: var(--hana-radius-full);
+  white-space: nowrap;
+}
+
+.hana-badge-primary {
+  background: var(--hana-primary);
+  color: var(--hana-white);
+}
+
+.hana-badge-mint {
+  background: var(--hana-mint-light);
+  color: var(--hana-primary);
+}
+
+.hana-badge-orange {
+  background: var(--hana-orange-light);
+  color: var(--hana-orange);
+}
+
+/* 하나금융그룹 진행바 */
+.hana-progress {
+  width: 100%;
+  height: 8px;
+  background: var(--hana-light-gray);
+  border-radius: var(--hana-radius-full);
+  overflow: hidden;
+}
+
+.hana-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--hana-primary), var(--hana-mint));
+  border-radius: var(--hana-radius-full);
+  transition: width var(--hana-transition-slow);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  :root {
+    --hana-font-size-base: 0.875rem;
+    --hana-font-size-lg: 1rem;
+    --hana-font-size-xl: 1.125rem;
+    --hana-font-size-2xl: 1.25rem;
+    --hana-font-size-3xl: 1.5rem;
+    --hana-font-size-4xl: 1.875rem;
+  }
+  
+  .hana-card-header,
+  .hana-card-body,
+  .hana-card-footer {
+    padding: var(--hana-space-4);
+  }
+}
+
+/* 애니메이션 */
+@keyframes hanaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hanaSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hana-fade-in {
+  animation: hanaFadeIn 0.6s ease-out;
+}
+
+.hana-slide-in {
+  animation: hanaSlideIn 0.6s ease-out;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--hana-bg-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hana-primary);
+  border-radius: var(--hana-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hana-primary-dark);
+}
