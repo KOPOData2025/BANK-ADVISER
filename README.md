@@ -70,51 +70,33 @@ AI 기반 스마트 금융 상담 시스템 'Bank Advisor'는 행원의 업무 �
 <img width="1440" height="900" alt="시스템 아키텍처" src="https://github.com/user-attachments/assets/886e6817-d04b-453a-9a4e-4eac645270b5" />
 
 ---
+<div align="right">
 
-## 7. 설치 및 실행
+[목차로](#목차)
 
-### 7-1. 환경 설정 (필수!)
-```bash
-# 저장소 클론
-git clone <repository-url>
-cd bank-teller-workspace
+</div>
 
-# 환경 변수 설정
-cp .env.example .env
-nano .env  # 또는 vim .env
-```
+## 개발자 프로필
 
-**필수 설정 항목:**
-- `OPENAI_API_KEY`: OpenAI API 키 (상품 추천용)
-- `SUPABASE_URL`: Supabase 프로젝트 URL  
-- `SUPABASE_ANON_KEY`: Supabase 익명 키
-- `HUGGINGFACE_TOKEN`: Hugging Face 토큰 (AI 모델용)
+| 구분       | 내용                                                                                         | 비고                                                                                                      |
+|:--:|:--:|:--:|
+| 이름       | 김승현                                                                                       |  <img src="https://github.com/user-attachments/assets/e6d05f5a-10dd-4e1c-98d3-1f185e812b8d" alt="김승현_증명사진" width="150">|
+| 연락처     | 이메일                                                                                       | ppdoli123@naver.com                                                                                       |
+| 전공       | 광운대학교 정보융합학부                                                                       | 졸업(2025.08)                                                                                |
+| 이력       | (주)뱅가드랩                                                                       | 인턴(2024.01.02~2024.02.28)                                                                               |
+| Skill set | Language                                                                                     | Python, Java, Javascript   |
+|           | Framework & Library                                                                          | Pandas, Spring, React |
+|           | Database                                                                                     | MySQL, Oracle, postgreSQL                              |
+|           | Etc                                                                                          | Git, AWS, Docker, Figma|
+| 자격증    | adsp (데이터 분석 준전문가)                             | 2022.03.25 |
+|           | 빅데이터 분석기사                      | 2023.07.14 |
+|           | SQLD (sql 개발자)                            | 2024.04.05 |
+|           | 정보처리기사                      | 2024.06.18 |
+| 수상      | 2025학년도 폴리텍 벤처창업경진대회 본선진출(동상 확보)                                                                       | 한국폴리텍대학 (2025.10.22)    |
+|          | 2025학년도 광명융합기술교육원 경진대회 은상                                                                                | 한국폴리텍대학 (2025.10.15)    |
+|          | 2023학년도 광운대학교 캡스톤 대회 장려상                                                                                | 광운대학교 (2023.11.21)    |
+| 교육      | 하나금융티아이 채용연계형 교육  <br/>(한국폴리텍대학교 광명융합기술교육원 - 데이터분석과) | 2025.03 ~ 2025.10         |
 
-### 7-2. Docker Compose로 실행
-```bash
-# 전체 시스템 실행
-docker-compose up --build -d
 
-# 서비스 상태 확인
-docker-compose ps
-```
-
-### 7-3. 서비스 접속
-- **프론트엔드**: http://localhost:80
-- **백엔드 API**: http://localhost:8080
-- **OCR 서버**: http://localhost:8081
-- **음성 인식 서버**: http://localhost:5005
-
-### 7-4. 문제 해결
-```bash
-# 로그 확인
-docker-compose logs [서비스명]
-
-# 서비스 재시작
-docker-compose restart [서비스명]
-
-# 전체 시스템 중지
-docker-compose down
-```
 
 ---
