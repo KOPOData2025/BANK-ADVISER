@@ -5,16 +5,18 @@
 ---
 
 ## 1. 프로젝트 개요
-<img width="1440" height="900" alt="프로젝트 개요" src="https://github.com/user-attachments/assets/6248a48b-7457-4903-8986-0d091c899e0a" />
+<img width="1440" height="900" alt="스크린샷 2025-10-16 오후 2 29 57" src="https://github.com/user-attachments/assets/54a63a8e-0ef3-49f3-9561-7b441f1e6770" />
+
 
 AI 기반 스마트 금융 상담 시스템 'Bank Advisor'는 행원의 업무 효율을 극대화하고, 고객에게는 초개인화된 상담 경험을 제공하는 통합 플랫폼입니다.
 
 ---
 
 ## 2. 기획배경
+
 <p align="center">
-  <img width="49%" alt="설문조사 결과" src="https://github.com/user-attachments/assets/1d58784c-fb22-4071-9a56-6e104199bf3f" />
-  <img width="49%" alt="행원의 어려움" src="https://github.com/user-attachments/assets/cd91c510-7e6f-4a9a-bfc4-8f5ccecefe8f" />
+<img width="49%"  alt="스크린샷 2025-10-16 오후 2 30 11" src="https://github.com/user-attachments/assets/89c00e09-9c7d-4d0f-902c-880133617150" />
+<img width="49%"  alt="스크린샷 2025-10-16 오후 2 30 17" src="https://github.com/user-attachments/assets/52fc1b0b-ee86-41f5-89ed-a7f796f783c1" />
 </p>
 
 "좋은 상품을 추천해도 영업으로 오해받는다"는 행원의 심리적 부담감에서 시작했습니다. 그 원인인 **정보의 홍수, 반복적인 업무, 소통의 한계**를 기술로 해결하고자 했습니다.
@@ -22,14 +24,16 @@ AI 기반 스마트 금융 상담 시스템 'Bank Advisor'는 행원의 업무 �
 ---
 
 ## 3. 서비스 소개
-<img width="1440" height="900" alt="서비스 소개" src="https://github.com/user-attachments/assets/c91970eb-c0ac-4ad1-8f27-dded05d0708e" />
+
+<img width="1440" height="900" alt="스크린샷 2025-10-16 오후 2 30 25" src="https://github.com/user-attachments/assets/6e66df48-cecc-419f-9690-1db3f75590fd" />
 
 기존의 스마트 태블릿이 가진 '단순 서식 작성'이라는 수동적인 역할을, AI 추천과 실시간 시뮬레이션이 가능한 **적극적인 상담 도구**로 재정의하여 상담의 패러다임을 전환합니다.
 
 ---
 
 ## 4. 서비스 기능
-<img width="1440" height="900" alt="서비스 기능" src="https://github.com/user-attachments/assets/611e69e4-bb19-4c56-95c2-2e28db2828fc" />
+
+<img width="1440" height="900" alt="스크린샷 2025-10-16 오후 2 30 39" src="https://github.com/user-attachments/assets/9ba1cdd6-ee95-4cbd-9b58-5598054de20b" />
 
 ### 4-1. 대시보드
 - **포트폴리오 분석:** 고객 자산 현황, 투자 성향 등 시각화 분석
@@ -50,17 +54,21 @@ AI 기반 스마트 금융 상담 시스템 'Bank Advisor'는 행원의 업무 �
 ## 5. 특화 기술
 
 ### 5-1. 상품 추천 파이프라인
-<img width="1440" height="900" alt="상품 추천 파이프라인" src="https://github.com/user-attachments/assets/36d540df-7033-49b7-abdc-d42369e9c99a" />
+
+<img width="1440" height="900" alt="스크린샷 2025-10-16 오후 2 31 06" src="https://github.com/user-attachments/assets/46266256-ac18-485a-9fc2-fc0baccdd1ff" />
 
 단순 키워드 매칭을 넘어, 데이터 수집부터 고객 컨텍스트 분석, RAG 기반 후보군 생성까지 총 **6단계의 정교한 파이프라인**을 통해 가장 신뢰도 높은 추천 결과를 제공합니다.
 
 ### 5-2. OCR 로그인
-<img width="1440" height="900" alt="OCR 로그인" src="https://github.com/user-attachments/assets/1aa597af-b7c6-4d63-9751-d4e0ab2ce69a" />
+
+<img width="1440" height="900" alt="스크린샷 2025-10-16 오후 2 31 12" src="https://github.com/user-attachments/assets/abbb85a9-dfe2-45d7-a713-caf61b0f6c4f" />
 
 실제 창구 환경에서 발생할 수 있는 빛 반사, 기울어짐 등 까다로운 예외 상황(Edge Case)에 대한 테스트를 완료하여, 어떤 조건에서도 빠르고 정확하게 고객을 인식하는 **강건한 기술**을 확보했습니다.
 
 ### 5-3. Pyannote 화자분리
-<img width="1440" height="900" alt="Pyannote 화자분리" src="https://github.com/user-attachments/assets/0ff709b2-2f68-4a8a-b184-bc26118be19d" />
+
+<img width="1440" height="900" alt="스크린샷 2025-10-16 오후 2 31 19" src="https://github.com/user-attachments/assets/bde3ca79-5b3b-497d-ad0f-bb98a568caa2" />
+
 
 오픈소스 모델을 그대로 사용하지 않았습니다. 1,000시간 분량의 **[AI Hub 금융 분야 음성 데이터](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=100)** 추가 학습과 행원별 음성 프로필 적용을 통해 행원 식별 정확도 **99**%를 달성하였습니다.
 
